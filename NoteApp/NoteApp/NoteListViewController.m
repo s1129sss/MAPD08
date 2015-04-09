@@ -138,6 +138,7 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%ld筆被找到了",(long)indexPath.row);
+    NSLog(@"第一次commet")
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     /*
