@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GAI.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [GAI sharedInstance].dispatchInterval = 10;
+    [[GAI sharedInstance]trackerWithTrackingId:@"UA-61745426-1"];
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    
     
     NSLog(@"home: %@",NSHomeDirectory());
     

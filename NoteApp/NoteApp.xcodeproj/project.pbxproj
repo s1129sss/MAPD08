@@ -21,6 +21,19 @@
 		F93BF48E1AA9987E003B919D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F93BF48D1AA9987E003B919D /* Reachability.m */; };
 		F93BF4901AA99892003B919D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93BF48F1AA99892003B919D /* SystemConfiguration.framework */; };
 		F93BF4921AA998A9003B919D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93BF4911AA998A9003B919D /* CoreData.framework */; };
+		F977740C1AD75D1600A33485 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F977740B1AD75D1600A33485 /* libGoogleAnalyticsServices.a */; };
+		F977740E1AD75DD000A33485 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F977740D1AD75DD000A33485 /* libz.dylib */; };
+		F97774101AD75DE900A33485 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F977740F1AD75DE900A33485 /* AdSupport.framework */; };
+		F97774121AD75E0200A33485 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774111AD75E0200A33485 /* libsqlite3.dylib */; };
+		F97774141AD76E0C00A33485 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774131AD76E0C00A33485 /* GoogleMobileAds.framework */; };
+		F97774161AD76E3900A33485 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774151AD76E3900A33485 /* StoreKit.framework */; };
+		F97774191AD76E8E00A33485 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774181AD76E8E00A33485 /* AudioToolbox.framework */; };
+		F977741B1AD76E9B00A33485 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F977741A1AD76E9B00A33485 /* MessageUI.framework */; };
+		F977741D1AD76EC300A33485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F977741C1AD76EC300A33485 /* CoreGraphics.framework */; };
+		F977741F1AD76EE100A33485 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F977741E1AD76EE100A33485 /* AVFoundation.framework */; };
+		F97774211AD76EF000A33485 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774201AD76EF000A33485 /* CoreTelephony.framework */; };
+		F97774231AD76EFD00A33485 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774221AD76EFD00A33485 /* EventKit.framework */; };
+		F97774251AD76F0400A33485 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97774241AD76F0400A33485 /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +72,29 @@
 		F93BF48D1AA9987E003B919D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Reachability/Reachability/Reachability.m; sourceTree = "<group>"; };
 		F93BF48F1AA99892003B919D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F93BF4911AA998A9003B919D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F97774011AD75D0800A33485 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		F97774021AD75D0800A33485 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		F97774031AD75D0800A33485 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		F97774041AD75D0800A33485 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		F97774051AD75D0800A33485 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		F97774061AD75D0800A33485 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		F97774071AD75D0800A33485 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		F97774081AD75D0800A33485 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		F97774091AD75D0800A33485 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		F977740A1AD75D0800A33485 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		F977740B1AD75D1600A33485 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		F977740D1AD75DD000A33485 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F977740F1AD75DE900A33485 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F97774111AD75E0200A33485 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F97774131AD76E0C00A33485 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		F97774151AD76E3900A33485 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F97774181AD76E8E00A33485 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F977741A1AD76E9B00A33485 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F977741C1AD76EC300A33485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F977741E1AD76EE100A33485 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F97774201AD76EF000A33485 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F97774221AD76EFD00A33485 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		F97774241AD76F0400A33485 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +102,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F93BF4921AA998A9003B919D /* CoreData.framework in Frameworks */,
+				F97774251AD76F0400A33485 /* EventKitUI.framework in Frameworks */,
+				F97774231AD76EFD00A33485 /* EventKit.framework in Frameworks */,
+				F97774211AD76EF000A33485 /* CoreTelephony.framework in Frameworks */,
+				F977741F1AD76EE100A33485 /* AVFoundation.framework in Frameworks */,
+				F977741D1AD76EC300A33485 /* CoreGraphics.framework in Frameworks */,
 				F93BF4901AA99892003B919D /* SystemConfiguration.framework in Frameworks */,
+				F977741B1AD76E9B00A33485 /* MessageUI.framework in Frameworks */,
+				F97774191AD76E8E00A33485 /* AudioToolbox.framework in Frameworks */,
+				F97774161AD76E3900A33485 /* StoreKit.framework in Frameworks */,
+				F97774121AD75E0200A33485 /* libsqlite3.dylib in Frameworks */,
+				F97774101AD75DE900A33485 /* AdSupport.framework in Frameworks */,
+				F977740E1AD75DD000A33485 /* libz.dylib in Frameworks */,
+				F93BF4921AA998A9003B919D /* CoreData.framework in Frameworks */,
+				F97774141AD76E0C00A33485 /* GoogleMobileAds.framework in Frameworks */,
+				F977740C1AD75D1600A33485 /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +133,10 @@
 		740EC6431A8C34D900BF2702 = {
 			isa = PBXGroup;
 			children = (
-				F93BF4911AA998A9003B919D /* CoreData.framework */,
-				F93BF48F1AA99892003B919D /* SystemConfiguration.framework */,
+				F97774171AD76E4A00A33485 /* framework */,
+				F97774111AD75E0200A33485 /* libsqlite3.dylib */,
+				F977740D1AD75DD000A33485 /* libz.dylib */,
+				F97774001AD75CE400A33485 /* GoogleAD */,
 				F93BF48B1AA99843003B919D /* reachabllity */,
 				740EC64E1A8C34D900BF2702 /* NoteApp */,
 				740EC6681A8C34D900BF2702 /* NoteAppTests */,
@@ -158,6 +209,43 @@
 				F93BF48D1AA9987E003B919D /* Reachability.m */,
 			);
 			name = reachabllity;
+			sourceTree = "<group>";
+		};
+		F97774001AD75CE400A33485 /* GoogleAD */ = {
+			isa = PBXGroup;
+			children = (
+				F977740B1AD75D1600A33485 /* libGoogleAnalyticsServices.a */,
+				F97774011AD75D0800A33485 /* GAI.h */,
+				F97774021AD75D0800A33485 /* GAIDictionaryBuilder.h */,
+				F97774031AD75D0800A33485 /* GAIEcommerceFields.h */,
+				F97774041AD75D0800A33485 /* GAIEcommerceProduct.h */,
+				F97774051AD75D0800A33485 /* GAIEcommerceProductAction.h */,
+				F97774061AD75D0800A33485 /* GAIEcommercePromotion.h */,
+				F97774071AD75D0800A33485 /* GAIFields.h */,
+				F97774081AD75D0800A33485 /* GAILogger.h */,
+				F97774091AD75D0800A33485 /* GAITrackedViewController.h */,
+				F977740A1AD75D0800A33485 /* GAITracker.h */,
+			);
+			name = GoogleAD;
+			sourceTree = "<group>";
+		};
+		F97774171AD76E4A00A33485 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				F97774241AD76F0400A33485 /* EventKitUI.framework */,
+				F97774221AD76EFD00A33485 /* EventKit.framework */,
+				F97774201AD76EF000A33485 /* CoreTelephony.framework */,
+				F977741E1AD76EE100A33485 /* AVFoundation.framework */,
+				F977741C1AD76EC300A33485 /* CoreGraphics.framework */,
+				F977741A1AD76E9B00A33485 /* MessageUI.framework */,
+				F97774181AD76E8E00A33485 /* AudioToolbox.framework */,
+				F97774151AD76E3900A33485 /* StoreKit.framework */,
+				F97774131AD76E0C00A33485 /* GoogleMobileAds.framework */,
+				F977740F1AD75DE900A33485 /* AdSupport.framework */,
+				F93BF4911AA998A9003B919D /* CoreData.framework */,
+				F93BF48F1AA99892003B919D /* SystemConfiguration.framework */,
+			);
+			name = framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,8 +477,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NoteApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -399,8 +496,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NoteApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

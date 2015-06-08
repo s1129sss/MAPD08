@@ -10,14 +10,29 @@
 #import "Note.h"
 #import "NoteCell.h"
 #import "NoteViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+@import GoogleMobileAds;
 
-@interface NoteListViewController ()<UITableViewDataSource,UITableViewDelegate,NoteViewControllerDelgate>
+@interface NoteListViewController ()<UITableViewDataSource,UITableViewDelegate,NoteViewControllerDelgate,GADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic) NSMutableArray *notes;
+@property(nonatomic) GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableTopConstraint;
 
 @end
 
 @implementation NoteListViewController
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[GAI sharedInstance].defaultTracker set:kGAIScreenName value:@"ListViewController"];
+    NSDictionary *dict = [[GAIDictionaryBuilder createAppView] build];
+    [[GAI sharedInstance].defaultTracker send:dict];
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -26,7 +41,7 @@
         for (int i=0; i<10; i++) {
             Note *note = [[Note alloc]init];
             
-            note.text = [NSString stringWithFormat:@"noteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee %d",i];
+            note.text = [NSString stringWithFormat:@"noteeee %d",i];
             
             [self.notes addObject:note];
         }
@@ -64,8 +79,46 @@
     //self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem; // 上方控制列左邊按鈕設定
+    
+    
+    //googleAD 相關設定
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.bannerView = [[GADBannerView alloc]initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-7371395485278776/2897448449";
+    self.bannerView.delegate = self;
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+    
 }
+
+#pragma mark GADBannerViewDelegate
+
+-(void)adViewDidReceiveAd:(GADBannerView *)adview
+{
+    if ( ![adview superview] )
+    { [self.view addSubview:adview];
+        [self.view removeConstraint:self.tableTopConstraint];
+        NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[adview(50)][tableView]|" options:0 metrics:nil views:@{@"adview":adview,@"tableView":self.tableView}];
+        NSArray *horizonalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[adview]|" options:0 metrics:nil views:@{@"adview":adview}];
+        [self.view addConstraints:constraints];
+        [self.view addConstraints:horizonalConstraints];
+    }
+}
+
+//-(void)adViewDidReceiveAd:(GADBannerView *)view
+//{
+//    self.tableView.tableHeaderView = self.bannerView;
+//}
+
 - (IBAction)addNote:(id)sender {
+    
+    //googleAD 紀錄資訊(新增note的頻率)
+    NSTimeInterval interval = 24*60*60;
+    NSDictionary *eventData = [[GAIDictionaryBuilder createEventWithCategory:@"New Note" action:@"internval" label:nil value:@(interval)] build];
+    [[GAI sharedInstance].defaultTracker send:eventData];
+    
+    
     Note *note = [[Note alloc]init];
     note.text = @"new note";
     
@@ -138,7 +191,7 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%ld筆被找到了",(long)indexPath.row);
-    NSLog(@"第一次commet")
+    NSLog(@"第一次commet");
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     /*

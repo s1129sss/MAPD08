@@ -7,11 +7,14 @@
 //
 
 #import "NoteViewController.h"
+@import GoogleMobileAds;
 
-@interface NoteViewController ()<UIImagePickerControllerDelegate>
+@interface NoteViewController ()<UIImagePickerControllerDelegate,GADInterstitialDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textVieew;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(nonatomic) BOOL isNewImage;
+@property(nonatomic) GADInterstitial *interstitial;
+
 
 @end
 
@@ -28,6 +31,13 @@
     
     // Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
+    
+    
+    //googAD 插頁式廣告
+    self.interstitial = [[GADInterstitial alloc]init];
+    self.interstitial.adUnitID = @"ca-app-pub-7371395485278776/5571713242";
+    self.interstitial.delegate = self;
+    [self.interstitial loadRequest:[GADRequest request]];
 }
 
 -(IBAction)done:(id)sender
@@ -51,8 +61,8 @@
         filePath = [filePath stringByAppendingPathComponent:fileName];
         //轉成JPEG格式的Data,0-1之間，1表示Quality最好，壓縮比最低，檔案最大
         NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, .9);
-        //存到檔案
-        [imageData writeToFile:filePath atomically:YES];
+        
+        
     }
     
     
@@ -66,8 +76,34 @@
     }
     
     
+    //googleAD
+    if(self.interstitial.isReady)
+    {
+        //有廣告時，跳廣告
+        [self.interstitial presentFromRootViewController:self];
+    }
+    else
+    {
+        //沒廣告時，則走一般流程
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
     //回上一頁
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark GADInterstitalDelegate
+
+-(void)interstitialDidDismissScreen:(GADInterstitial *)ad
+{
+    //按下X
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)interstitialWillLeaveApplication:(GADInterstitial *)ad
+{
+    //點了廣告
+    [self dismissViewControllerAnimated:YES completion:^{[self.navigationController popViewControllerAnimated:YES];}];
 }
 
 //相機設定
